@@ -1,8 +1,16 @@
 import { useEffect, useState } from 'react';
 import { Result, FormType } from '../type';
 
+const columns = [
+  'population',
+  'orbital_period',
+  'diameter',
+  'rotation_period',
+  'surface_water',
+];
+
 const INITIAL_STATE = {
-  colum: 'population',
+  column: columns[0],
   comparison: 'maior que',
   number: 0,
 };
@@ -11,6 +19,7 @@ export default function usePlanets() {
   const [allPlanets, setAllPlanets] = useState<Result[]>([]);
   const [searchPlanet, setSearchPlanet] = useState('');
   const [formResult, setFormResult] = useState(INITIAL_STATE);
+  const [optionColumns, setOptionColumns] = useState<string[]>(columns);
 
   useEffect(() => {
     const fetchPlanets = async () => {
@@ -31,20 +40,28 @@ export default function usePlanets() {
   const formFilter = (form: FormType) => {
     if (form.comparison === 'maior que') {
       const planetFiltered = allPlanets
-        .filter((planet: any) => Number(planet[form.colum]) > Number(form.number));
+        .filter((planet: any) => Number(planet[form.column]) > Number(form.number));
       return planetFiltered;
     }
     if (form.comparison === 'menor que') {
       const planetFiltered = allPlanets
-        .filter((planet: any) => Number(planet[form.colum]) < Number(form.number));
+        .filter((planet: any) => Number(planet[form.column]) < Number(form.number));
       return planetFiltered;
     }
     if (form.comparison === 'igual a') {
       const planetFiltered = allPlanets
-        .filter((planet: any) => Number(planet[form.colum]) === Number(form.number));
+        .filter((planet: any) => Number(planet[form.column]) === Number(form.number));
       return planetFiltered;
     }
   };
+
+  useEffect(() => {
+    setFormResult({
+      column: optionColumns[0],
+      comparison: 'maior que',
+      number: 0,
+    });
+  }, [optionColumns]);
 
   return {
     allPlanets,
@@ -55,5 +72,7 @@ export default function usePlanets() {
     setFormResult,
     formFilter,
     setAllPlanets,
+    optionColumns,
+    setOptionColumns,
   };
 }

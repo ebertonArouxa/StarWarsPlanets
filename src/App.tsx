@@ -12,6 +12,8 @@ function App() {
     setFormResult,
     formFilter,
     setAllPlanets,
+    optionColumns,
+    setOptionColumns,
   } = usePlanets();
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -30,6 +32,8 @@ function App() {
     if (filteredPlanets) {
       setAllPlanets(filteredPlanets);
     }
+    const newColumns = optionColumns.filter((column) => column !== formResult.column);
+    setOptionColumns(newColumns);
   };
 
   return (
@@ -46,19 +50,18 @@ function App() {
         data-testid="name-filter"
       />
       <label htmlFor="colum">
-        <span>Colum</span>
+        <span>Column</span>
       </label>
       <select
-        name="colum"
-        id="colum"
+        name="column"
+        id="column"
         data-testid="column-filter"
         onChange={ handleSelectChange }
       >
-        <option value="population">population</option>
-        <option value="orbital_period">orbital_period</option>
-        <option value="diameter">diameter</option>
-        <option value="rotation_period">rotation_period</option>
-        <option value="surface_water">surface_water</option>
+        {
+          optionColumns
+            .map((column) => <option key={ column } value={ column }>{column}</option>)
+        }
       </select>
       <label htmlFor="operator">
         <span>Operator</span>
