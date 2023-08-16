@@ -23,7 +23,7 @@ export interface Result {
 }
 
 export interface FormType {
-  colum: string,
+  column: string,
   comparison: string,
   number: number,
 }
