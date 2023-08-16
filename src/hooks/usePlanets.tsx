@@ -3,6 +3,7 @@ import { Result } from '../type';
 
 export default function usePlanets() {
   const [allPlanets, setAllPlanets] = useState<Result[]>([]);
+  const [searchPlanet, setSearchPlanet] = useState('');
 
   useEffect(() => {
     const fetchPlanets = async () => {
@@ -17,5 +18,8 @@ export default function usePlanets() {
     fetchPlanets();
   }, []);
 
-  return { allPlanets };
+  const filteredPlanet = allPlanets
+    .filter((planet) => planet.name.toLowerCase().includes(searchPlanet));
+
+  return { allPlanets, searchPlanet, setSearchPlanet, filteredPlanet };
 }
