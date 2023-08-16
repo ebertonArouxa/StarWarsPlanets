@@ -21,3 +21,9 @@ export interface Result {
   edited: string,
   url: string,
 }
+
+export interface FormType {
+  colum: string,
+  comparison: string,
+  number: number,
+}
