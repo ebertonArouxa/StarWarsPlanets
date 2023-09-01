@@ -1,4 +1,4 @@
-import { render, screen, waitFor } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 import App from '../App';
 import mockedApi from '../Mock/apiMock';
 import { vi } from 'vitest';
