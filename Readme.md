@@ -1,8 +1,27 @@
-# Título do Projeto
+# StarWars Planets
 
 ## Descrição
 
 Este repositório está em construção. Aqui você encontrará [breve resumo do projeto ou curso] e seus componentes.
+
+O StarWars Planets é um projeto que reúne informações detalhadas sobre os planetas do universo Star Wars. Este site foi desenvolvido para fãs e pesquisadores que desejam explorar e aprender mais sobre os planetas fascinantes que desempenham papéis cruciais na saga Star Wars.
+
+Recursos Principais:
+
+Pesquisa por Nome: Os usuários podem pesquisar planetas específicos pelo nome e obter informações detalhadas sobre eles.
+
+Filtros Avançados: O site permite que os usuários apliquem filtros personalizados, como "maior que" e "menor que" em várias características, como população, diâmetro do planeta, gravidade, etc., para refinar sua pesquisa.
+
+Detalhes Abrangentes: Cada planeta oferece uma visão abrangente, incluindo:
+
+Tempo de Órbita: O período de tempo que um planeta leva para orbitar sua estrela.
+Diâmetro do Planeta: As dimensões físicas do planeta.
+Clima: Informações sobre o clima predominante no planeta.
+Gravidade: A força de gravidade em relação à Terra.
+Terreno: Descrição das características geográficas do planeta.
+População: O número estimado de habitantes do planeta.
+Aparições nos Filmes: Uma lista dos filmes da saga Star Wars em que o planeta apareceu.
+Navegação Intuitiva: O site oferece uma experiência de usuário intuitiva
 
 ## Conteúdo
 
@@ -11,7 +30,9 @@ Este repositório está em construção. Aqui você encontrará [breve resumo do
 
 ## Instruções de Instalação
 
-Descreva aqui as instruções necessárias para configurar o ambiente de desenvolvimento e instalar quaisquer dependências.
+1. Faça um git clone `git clone git@github.com:ebertonArouxa/StarWarsPlanets.git`
+2. Abra o repositório clonado
+3. Instale as dependências `npm i` 
 
 ## Como Usar
 
@@ -29,5 +50,4 @@ Se você deseja contribuir para este projeto, siga estas etapas para contribuir:
 
 Lembre-se de que todas as contribuições são valorizadas e ajudam a tornar este projeto melhor para todos!
 
-## Continue como desejar este Readme.md
 **Observação:** Este repositório está em construção e será atualizado regularmente. Sinta-se à vontade para adicionar mais seções conforme necessário para o seu projeto.
